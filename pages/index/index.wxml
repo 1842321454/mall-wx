@@ -3,8 +3,9 @@
 <seachInput></seachInput>
 <!-- 轮播图 -->
 <view class="index_swiper">
-  <swiper>
-    <swiper-item wx:for="{{swiperList}}" wx:key=""> 
+  <swiper indicator-dots="true" 	autoplay="true">
+    <swiper-item wx:for="{{swiperList}}"> 
+        <image src="{{item.image_src}}" mode="widthFix"></image>
     </swiper-item>
   </swiper>
 </view>

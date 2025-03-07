@@ -1,3 +1,5 @@
+import { request } from "../../request/index.js";
+
 Page({
 
   /**
@@ -11,11 +13,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    wx.request({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata', 
-      success (res) {
-        console.log(res)
-      }
+    request({
+      url:'/swiperdata'
+    }).then(result=>{
+      this.setData({
+        swiperList: result.data.message
+    })
     })
   }
   
